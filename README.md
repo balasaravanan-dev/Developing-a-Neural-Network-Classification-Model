@@ -47,37 +47,64 @@ Write your own steps
 ### Register Number:
 
 ```python
+# Define Neural Network(Model1)
 class PeopleClassifier(nn.Module):
     def __init__(self, input_size):
         super(PeopleClassifier, self).__init__()
-        #Include your code here
-
-
+        self.fc1 = nn.Linear(input_size, 32)
+        self.fc2 = nn.Linear(32,16)
+        self.fc3 = nn.Linear(16,8)
+        self.fc4 = nn.Linear(8,4) 
 
     def forward(self, x):
-        #Include your code here
+      x = F.relu(self.fc1(x))
+      x = F.relu(self.fc2(x))
+      x = F.relu(self.fc3(x))
+      x = self.fc4(x)
+      return x
         
-# Initialize the Model, Loss Function, and Optimizer
-
+# Training Loop
 def train_model(model, train_loader, criterion, optimizer, epochs):
-    #Include your code here
+    model.train()
+    for epoch in range(epochs):
+        for inputs, labels in train_loader:
+            optimizer.zero_grad()
+            outputs = model(inputs)
+            loss = criterion(outputs,labels)
+            loss.backward()
+            optimizer.step()
+
+
+    if (epoch + 1) % 10 == 0:
+        print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')'
+
+# Initialize model
+model = PeopleClassifier(input_size=X_train.shape[1])
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+train_model(model,train_loader,criterion,optimizer,epochs=100) 
 
 ```
 
 ### Dataset Information
-Include screenshot of the dataset.
+<img width="1313" height="341" alt="image" src="https://github.com/user-attachments/assets/39f1ac32-b271-48bc-a5ed-e1b13d8b573c" />
+
 
 ### OUTPUT
+<img width="1029" height="395" alt="image" src="https://github.com/user-attachments/assets/062a69fe-9913-4964-a8d0-7133ba3a0690" />
+
 
 ## Confusion Matrix
+<img width="676" height="572" alt="image" src="https://github.com/user-attachments/assets/846310bd-3a11-47de-a952-d6f3650cb719" />
 
-Include confusion matrix here
 
 ## Classification Report
-Include classification report here
+<img width="625" height="442" alt="image" src="https://github.com/user-attachments/assets/112c753f-6168-4937-9d5b-a5dd43806cf2" />
+
 
 ### New Sample Data Prediction
-Include your sample input and output here
+<img width="1029" height="395" alt="image" src="https://github.com/user-attachments/assets/062a69fe-9913-4964-a8d0-7133ba3a0690" />
 
 ## RESULT
-Include your result here
+Thus, a neural network Classification model was successfully developed and trained using PyTorch.
