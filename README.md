@@ -19,24 +19,21 @@ Include the neural network model diagram.
 Write your own steps
 
 ### STEP 2: 
-
-
+Import the necessary Python libraries and load the dataset into the workspace and Perform data preprocessing by handling missing values, encoding categorical variables, and scaling the features.
 
 ### STEP 3: 
-
-
+Split the dataset into training and testing datasets for model evaluation.
 
 ### STEP 4: 
-
+Define the neural network architecture with input, hidden, and output layers using PyTorch.
 
 
 ### STEP 5: 
-
+Initialize the loss function and optimizer, then train the neural network using the training dataset.
 
 
 ### STEP 6: 
-
-
+Evaluate the trained model using test data and compute performance metrics such as accuracy, confusion matrix, and classification report.
 
 
 
