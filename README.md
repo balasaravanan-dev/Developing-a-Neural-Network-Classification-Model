@@ -42,9 +42,8 @@ Write your own steps
 
 ## PROGRAM
 
-### Name:
-
-### Register Number:
+### Name: BALA SARAVANAN K
+### Register Number: 212224230031
 
 ```python
 # Define Neural Network(Model1)
