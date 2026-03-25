@@ -10,8 +10,22 @@ In their existing market, the sales team has classified all customers into 4 seg
 
 You are required to help the manager to predict the right group of the new customers.
 
+## PROBLEM STATEMENT AND DATASET
+Classify Fashion-MNIST images into their respective clothing categories using a convolutional neural network (CNN).
+
 ## Neural Network Model
-Include the neural network model diagram.
+| Layer   | Number of Nodes  |
+|---------|------------------|
+| Input   | 784              |
+| Conv1   | 32 filters       |
+| Conv2   | 64 filters       |
+| Conv3   | 128 filters      |
+| FC1     | 128              |
+| FC2     | 64               |
+| Output  | 10               |
+
+<!-- <img width="950" height="534" alt="image" src="https://github.com/user-attachments/assets/a59e4cee-29aa-4fd9-a7c8-f87a134ec202" /> -->
+<img width="1856" height="730" alt="image" src="https://github.com/user-attachments/assets/683540ba-1218-4e13-b90d-53b8ccf63cea" />
 
 ## DESIGN STEPS
 ### STEP 1: 
